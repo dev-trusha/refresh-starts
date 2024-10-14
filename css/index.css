@@ -1,0 +1,52 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Make html and body full height */
+html, body {
+    height: 100%;  /* Makes sure the content takes up the entire viewport */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Wrapper will take up the full available height */
+.wrapper {
+    flex: 1; 
+    display: flex;
+    flex-direction: column;
+}
+
+/* Main content styling */
+main {
+    flex: 1; /* Allows main to grow and take up space between header and footer */
+    padding: 20px; /* Add some padding to the main content */
+}
+
+/* Footer Styling */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+#footer-placeholder div {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+/* Footer link styling */
+#footer-placeholder a {
+    color: white;
+    margin-right: 15px;
+    text-decoration: none;
+}
+
+#footer-placeholder a:hover {
+    text-decoration: underline;
+}

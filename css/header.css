@@ -1,0 +1,62 @@
+/* Header Styling */
+header {
+    background-color: #f4f4f4;
+    border-bottom: 1px solid #ccc;
+}
+
+/* Promo Banner in the header */
+.top-bar {
+    background-color: #0066cc;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+.promo-banner {
+    font-size: 0.9rem;
+}
+
+/* Header main section: logo, search, icons */
+.header-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.logo img {
+    max-width: 150px;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+}
+
+.search-bar input {
+    padding: 10px;
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.search-bar button {
+    padding: 10px;
+    background-color: #0066cc;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-left: 10px;
+    border-radius: 4px;
+}
+
+.header-icons a {
+    margin-left: 20px;
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.header-icons a:hover {
+    text-decoration: underline;
+}

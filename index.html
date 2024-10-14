@@ -3,9 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="css/index.css">
+    <title>Refresh Starts - E-commerce</title>
 </head>
 <body>
-    
+    <div class="wrapper">
+        <div id="header-placeholder"></div>
+        <div id="navigation-placeholder"></div>
+        <main>
+            <!-- Main content goes here -->
+            <h1>Welcome to Refresh Starts!</h1>
+            <p>Browse through our collection of laptops, phones, and more.</p>
+        </main>
+        <div id="footer-placeholder"></div>
+    </div>
+
+    <script>
+        // Load the header dynamically
+        fetch('header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-placeholder').innerHTML = data;
+            });
+        fetch('navigation.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navigation-placeholder').innerHTML = data;
+            });
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            }); 
+    </script>
 </body>
 </html>
