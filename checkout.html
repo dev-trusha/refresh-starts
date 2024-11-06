@@ -6,13 +6,26 @@
     <title>Checkout Process</title>
     <link rel="stylesheet" href= "css/checkout.css">
     <link rel="icon" href="assests/favicons/checkout.ico" type="image/x-icon">
-</head>
+    <script>
+        function validateForm() {
+            const form = document.getElementById('checkout-form');
+            if (form.checkValidity()) {
+                // If the form is valid, redirect to the payment page
+                window.location.href = 'payment.html';
+            } else {
+                // If the form is not valid, show validation messages
+                form.reportValidity();
+            }
+        }
+    </script>
+
+    </head>
 <body>
     <div class="checkout-container">
         <h1>Checkout</h1>
         <form id="checkout-form">
             <fieldset>
-                <legend>Shipping Information</legend>
+                <legend><b><h2>Shipping Information</h2></b></legend>
                 <label for="name">Full Name:</label>
                 <input type="text" id="name" name="name" required>
 
@@ -22,34 +35,20 @@
                 <label for="city">City:</label>
                 <input type="text" id="city" name="city" required>
 
-                <label for="state">State:</label>
+                <label for="state">Province:</label>
                 <input type="text" id="state" name="state" required>
 
                 <label for="zip">Zip Code:</label>
                 <input type="text" id="zip" name="zip" required>
-            </fieldset>
+            </fieldset><br>
+            <label>
+                <input type="checkbox" checked="checked" name="sameadr"> Shipping address same as billing
+              </label><br>
+              <button type="button" onclick="validateForm()">Pay</button>
 
-            <fieldset>
-                <legend>Payment Information</legend>
-                <label for="card-number">Card Number:</label>
-                <input type="text" id="card-number" name="card-number" required>
+      
 
-                <label for="expiry">Expiry Date:</label>
-                <input type="month" id="expiry" name="expiry" required>
-
-                <label for="cvv">CVV:</label>
-                <input type="text" id="cvv" name="cvv" required>
-            </fieldset>
-
-            <fieldset>
-                <legend>Order Summary</legend>
-                <p>Item: Awesome Widget</p>
-                <p>Price: </p>
-                <p>Total: </p>
-            </fieldset>
-
-            <button type="submit">Complete Purchase</button>
-        </form>
+                    </form>
     </div>
 </body>
 </html>

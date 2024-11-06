@@ -1,9 +1,8 @@
 body {
     font-family: Arial, sans-serif;
-   background-color: #f4f4f4;
+    background-color: #f4f4f4;
     margin: 0;
     padding: 0;
-    
 }
 
 .checkout-container {
@@ -19,7 +18,6 @@ h1 {
     text-align: center;
     margin-bottom: 20px;
 }
-
 legend {
     font-weight: bold;
 }
@@ -63,7 +61,7 @@ button:hover {
 
     input[type="text"],
     input[type="month"] {
-        padding: 8px; /* Slightly reduce padding */
+        padding: 8px; /* Slightly reduce padding for input fields */
     }
 
     button {
@@ -71,3 +69,4 @@ button:hover {
         font-size: 18px; /* Adjust button font size */
     }
 }
+
