@@ -67,11 +67,54 @@ button:hover {
     margin-top: 10px;
 }
 
-.form-footer a {
+a {
     color: #007bff;
     text-decoration: none;
 }
 
-.form-footer a:hover {
+a:hover {
     text-decoration: underline;
+}
+.form-group input:focus{
+    outline:0;
+}
+
+.form-group .error{
+    color:rgb(242, 18, 18);
+    font-size:16px;
+    margin-top: 5px;
+}
+
+.form-group.success input{
+    border-color: #0cc477;
+}
+
+.form-group.error input{
+    border-color:rgb(206, 67, 67);
+}
+
+@media (max-width: 600px) {
+    .login-container {
+        padding: 20px;
+        max-width: 90%;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    input[type="email"],
+    input[type="password"] {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    button {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    .form-footer {
+        margin-top: 15px;
+    }
 }
