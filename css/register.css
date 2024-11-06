@@ -39,7 +39,6 @@ label {
 }
 
 input[type="text"],
-input[type="email"],
 input[type="password"] {
     width: 100%;
     padding: 10px;
@@ -59,6 +58,54 @@ button {
     cursor: pointer;
 }
 
+.form-footer {
+    text-align: center;
+    margin-top: 10px;
+}
+
 button:hover {
     background-color: #218838;
+}
+.form-group input:focus{
+    outline:0;
+}
+
+.form-group .error{
+    color:rgb(242, 18, 18);
+    font-size:16px;
+    margin-top: 5px;
+}
+
+.form-group.success input{
+    border-color: #0cc477;
+}
+
+.form-group.error input{
+    border-color:rgb(206, 67, 67);
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 15px;
+        max-width: 90%;
+    }
+
+    h1 {
+        font-size: 22px;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    button {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    .form-footer {
+        margin-top: 15px;
+    }
 }

@@ -1,10 +1,8 @@
-/* Header Styling */
 header {
     background-color: #f4f4f4;
     border-bottom: 1px solid #ccc;
 }
 
-/* Promo Banner in the header */
 .top-bar {
     background-color: #0066cc;
     color: white;
@@ -16,7 +14,6 @@ header {
     font-size: 0.9rem;
 }
 
-/* Header main section: logo, search, icons */
 .header-main {
     display: flex;
     justify-content: space-between;
@@ -59,4 +56,42 @@ header {
 
 .header-icons a:hover {
     text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+    .header-main {
+        flex-direction: column;
+        align-items: flex-start; 
+        padding: 15px;
+    }
+
+    .logo img {
+        max-width: 120px; 
+    }
+
+    .search-bar {
+        width: 100%;
+        margin-top: 10px; 
+    }
+
+    .search-bar input {
+        width: 100%; 
+    }
+
+    .search-bar button {
+        width: 80%; 
+        margin-left: 5px; 
+        margin-top: 0px; 
+    }
+
+    .header-icons {
+        width: 100%; 
+        margin-top: 10px; 
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .header-icons a {
+        margin-left: 0; 
+    }
 }
