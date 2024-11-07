@@ -35,7 +35,7 @@ p {
     color: #666;
 }
 
-.form-group {
+.form {
     margin-bottom: 15px;
 }
 
@@ -59,7 +59,7 @@ textarea {
     resize: none;
 }
 
-button {
+input[type="submit"] {
     width: 100%;
     padding: 10px;
     background-color: #28a745;
@@ -70,6 +70,6 @@ button {
     cursor: pointer;
 }
 
-button:hover {
+input[type="submit"] :hover {
     background-color: #218838;
 }
