@@ -67,6 +67,9 @@
 </head>
 
 <body>
+    <div class="wrapper">
+        <div id="header-placeholder"></div>
+        <div id="navigation-placeholder"></div>
     <div class="checkout-container">
         <h1>Checkout</h1>
         <form id="checkout-form" onsubmit="validateForm(event)">
@@ -90,8 +93,30 @@
                 <input type="text" class="cvv" name="cvv" placeholder="000" required maxlength="3">
             </fieldset>
 
-            <button type="submit">Pay</button>
+            <button type="submit" class="payment-btn">Pay</button>
         </form>
     </div>
+    <div id="footer-placeholder"></div>
+</div>
+
+<script>
+    // Load the header dynamically
+    fetch('header.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('header-placeholder').innerHTML = data;
+        });
+    fetch('navigation.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('navigation-placeholder').innerHTML = data;
+        });
+    fetch('footer.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('footer-placeholder').innerHTML = data;
+        }); 
+</script>
+
 </body>
 </html>
