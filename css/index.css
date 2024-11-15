@@ -8,16 +8,17 @@ html, body {
     height: 100%;  
     display: flex;
     flex-direction: column;
+    min-height: fit-content;
 }
 
 .wrapper {
-    flex: 1; 
+    flex-grow: 1; 
     display: flex;
     flex-direction: column;
 }
 
 main {
-    flex: 1; 
+    flex-grow: 1; 
     padding: 20px; 
 }
 
