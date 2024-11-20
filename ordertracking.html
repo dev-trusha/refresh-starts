@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Step Progress Bar</title>
+    <link rel="stylesheet" href="css/ordertracking.css">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link rel="icon" href="assests/favicons/ordertracking.ico" type="image/x-icon">
+</head>
+<body>
+    <div class="wrapper">
+        <div id="header-placeholder"></div>
+        <div id="navigation-placeholder"></div>
+    <div class="main">
+
+        <div class="head">
+            <p class="head_1">Order Tracking <span>Progress</span></p>
+        </div>
+
+        <ul>
+            <li>
+                <i class="icon uil uil-capture"></i>
+                <div class="progress one">
+                    <p>1</p>
+                    <i class="uil uil-check"></i>
+                </div>
+                <p class="text">Order Confirmed</p>
+            </li>
+            <li>
+                <i class="icon uil uil-clipboard-notes"></i>
+                <div class="progress two">
+                    <p>2</p>
+                    <i class="uil uil-check"></i>
+                </div>
+                <p class="text">Order Dispached</p>
+            </li>
+            <li>
+                <i class="icon uil uil-exchange"></i>
+                <div class="progress three">
+                    <p>3</p>
+                    <i class="uil uil-check"></i>
+                </div>
+                <p class="text">Order in Progress</p>
+            </li>
+            <li>
+                <i class="icon uil uil-map-marker"></i>
+                <div class="progress four">
+                    <p>4</p>
+                    <i class="uil uil-check"></i>
+                </div>
+                <p class="text">Order Arrived</p>
+            </li>
+        </ul>
+
+    </div>
+    <div id="footer-placeholder"></div>
+</div>
+    <script src="scripts/ordertracking.js"></script>
+    <script>
+        // Load the header dynamically
+        fetch('header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-placeholder').innerHTML = data;
+            });
+        fetch('navigation.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navigation-placeholder').innerHTML = data;
+            });
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            }); 
+    </script>
+</body>
+</html>
+
+
+

@@ -10,10 +10,13 @@
     <link rel="icon" href="assests/favicons/contact.ico" type="image/x-icon">
 </head>
 <body>
-<main>
+    <div class="wrapper">
+        <div id="header-placeholder"></div>
+        <div id="navigation-placeholder"></div>
+
     <div class="contact-container">
         <h1>Contact Us</h1>
-        <p>If you have any questions, feel free to send us a message below!</p>
+        <p class="contact-desc">If you have any questions, feel free to send us a message below!</p>
         <form action="submitcontact.html" id="contact-form">
                 <label for="name">Name</label>
                 <input type="text" id="name" name="name" required>
@@ -26,6 +29,27 @@
                 <button type="submit">Send message</button>
         </form>
     </div>
-    </main>
+    <div id="footer-placeholder"></div>
+</div>
+
+<script>
+    // Load the header dynamically
+    fetch('header.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('header-placeholder').innerHTML = data;
+        });
+    fetch('navigation.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('navigation-placeholder').innerHTML = data;
+        });
+    fetch('footer.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('footer-placeholder').innerHTML = data;
+        }); 
+</script>
+
 </body>
 </html>

@@ -1,17 +1,53 @@
 body {
-    font-family: Arial, sans-serif;
     background-color: #f4f4f4;
     margin: 0;
     padding: 0;
 }
 
+/* start of header,footer,nav */
+.wrapper {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+#footer-placeholder div {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+#footer-placeholder a {
+    color: white;
+    margin-right: 15px;
+    text-decoration: none;
+}
+
+#footer-placeholder a:hover {
+    text-decoration: underline;
+}
+/* end of header,footer,nav */
+
+
 .checkout-container {
-    max-width: 600px;
+    width: 600px;
     margin: 50px auto;
     padding: 20px;
     background: white;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
+    font-family: Arial, sans-serif;
+
 }
 
 h1 {
@@ -35,7 +71,7 @@ input[type="month"] {
     border-radius: 4px;
 }
 
-button {
+.payment-btn {
     width: 100%;
     padding: 10px;
     background-color: #28a745;
@@ -44,29 +80,78 @@ button {
     border-radius: 4px;
     cursor: pointer;
     font-size: 16px;
+    margin-top: 10px;
 }
 
 button:hover {
     background-color: #218838;
 }
-@media (max-width: 600px) {
+/* Media query for tablets (screen width 768px and below) */
+@media (max-width: 768px) {
     .checkout-container {
-        margin: 20px; /* Reduce margin for smaller screens */
-        padding: 15px; /* Adjust padding for smaller screens */
+        width: 90%;
+        margin: 20px auto;
+        padding: 15px;
     }
 
     h1 {
-        font-size: 24px; /* Smaller font size for heading */
+        font-size: 24px;
+    }
+
+    label {
+        font-size: 14px;
     }
 
     input[type="text"],
     input[type="month"] {
-        padding: 8px; /* Slightly reduce padding for input fields */
+        width: 100%;
+        padding: 8px;
     }
 
-    button {
-        padding: 12px; /* Increase button padding for better touch target */
-        font-size: 18px; /* Adjust button font size */
+    .payment-btn {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    #footer-placeholder div {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    #footer-placeholder a {
+        margin-right: 0;
     }
 }
 
+/* Media query for mobile phones (screen width 480px and below) */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 20px;
+    }
+
+    .checkout-container {
+        padding: 10px;
+    }
+
+    label {
+        font-size: 12px;
+    }
+
+    input[type="text"],
+    input[type="month"] {
+        padding: 6px;
+    }
+
+    .payment-btn {
+        font-size: 12px;
+        padding: 6px;
+    }
+
+    footer {
+        padding: 15px;
+    }
+
+    #footer-placeholder div {
+        gap: 5px;
+    }
+}

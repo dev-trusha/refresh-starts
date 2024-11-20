@@ -7,10 +7,12 @@
     <link rel="stylesheet" href="css/login.css">
     <script src="scripts/login.js" defer></script>
     <link rel="icon" href="assests/favicons/login.ico" type="image/x-icon">
+    
 </head>
 <body>
-
-   
+    <div class="wrapper">
+        <div id="header-placeholder"></div>
+        <div id="navigation-placeholder"></div>
 
     <div class="login-container">
         <h1>Login</h1>
@@ -27,7 +29,7 @@
             </div>
             <a href="#" class="forgot-pass-link">Forgot password?</a><br><br>
             <div class="form-group">
-                <button type="submit">Login</button>
+                <button type="submit" class="login-btn">Login</button>
             </div>
             <div class="form-footer">
                 <p>Don't have an account? <a href="register.html">Register here</a></p>
@@ -35,8 +37,26 @@
         </form>
     </div>
 
+    <div id="footer-placeholder"></div>
+</div>
 
-
-
+    <script>
+        // Load the header dynamically
+        fetch('header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-placeholder').innerHTML = data;
+            });
+        fetch('navigation.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navigation-placeholder').innerHTML = data;
+            });
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            }); 
+    </script>
 </body>
 </html>

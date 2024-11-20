@@ -5,21 +5,60 @@
 }
 
 body {
-    font-family: 'Arial', sans-serif;
     background-color: #f4f4f4;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
 }
 
+/* start of header,footer,nav */
+.wrapper {
+    flex-grow: 1; 
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+#footer-placeholder div {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+#footer-placeholder a {
+    color: white;
+    margin-right: 15px;
+    text-decoration: none;
+}
+
+#footer-placeholder a:hover {
+    text-decoration: underline;
+}
+/* end of header,footer,nav */
+
 .login-container {
+    flex: 1; 
+    margin: 20px;   
     background-color: white;
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     width: 100%;
     max-width: 400px;
+    align-self: center;
+    font-family: 'Arial', sans-serif;
+
 }
 
 h1 {
@@ -47,7 +86,7 @@ input[type="password"] {
     font-size: 16px;
 }
 
-button {
+.login-btn {
     width: 100%;
     padding: 10px;
     background-color: #007bff;
@@ -93,14 +132,27 @@ a:hover {
     border-color:rgb(206, 67, 67);
 }
 
-@media (max-width: 600px) {
+/* Mobile devices */
+@media (max-width: 768px) {
+    .wrapper {
+        width: 100%;
+        padding: 10px;
+    }
+
     .login-container {
+        width: 90%;
+        margin: 10px;
         padding: 20px;
-        max-width: 90%;
+        max-width: 300px;
     }
 
     h1 {
-        font-size: 24px;
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+    }
+
+    .form-group label {
+        font-size: 14px;
     }
 
     input[type="email"],
@@ -109,12 +161,48 @@ a:hover {
         padding: 8px;
     }
 
-    button {
+    .login-btn {
         padding: 8px;
         font-size: 14px;
     }
 
     .form-footer {
-        margin-top: 15px;
+        font-size: 14px;
+    }
+
+    footer {
+        padding: 15px;
+        font-size: 14px;
+    }
+
+    #footer-placeholder div {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    #footer-placeholder a {
+        margin: 5px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .login-container {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 1.3rem;
+    }
+
+    input[type="email"],
+    input[type="password"],
+    .login-btn {
+        font-size: 13px;
+        padding: 8px;
+    }
+
+    .form-footer,
+    footer {
+        font-size: 12px;
     }
 }
