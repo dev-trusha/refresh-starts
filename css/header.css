@@ -47,6 +47,25 @@ header {
     border-radius: 4px;
 }
 
+button {
+    background-color: #007bff; 
+    color: white; 
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 20px; 
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b5; 
+}
+
+
 .header-icons a {
     margin-left: 20px;
     color: #333;
@@ -56,6 +75,18 @@ header {
 
 .header-icons a:hover {
     text-decoration: underline;
+}
+
+.header-icons li {
+    font-size: 30px;
+    color: #333;     
+    margin-right: 15px;
+    cursor: pointer;  
+    transition: color 0.3s ease; 
+}
+
+.header-icons li:hover {
+    color: #007bff;  
 }
 
 @media (max-width: 600px) {
