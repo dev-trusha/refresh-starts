@@ -3,6 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <!-- bootstrap links -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- bootstrap links -->
     <link rel="stylesheet" href="css/header.css">
     <title>Header</title>
 </head>
@@ -13,15 +18,18 @@
                 <a href="assests/images/refresh-starts-logo.png"><img src="assests/images/refresh-starts-logo.png" alt="Refresh Starts Logo"></a>
             </div>
             <div class="search-bar">
-                <input type="text" placeholder="Search for products..." />
-                <button>Search</button>
+                <input type="text" id="find" placeholder="Search for products..." onkeypress="search()" />
+                <button onclick="search()">
+                    <i class="fa-solid fa-search"></i>
+                </button>
             </div>
             <div class="header-icons">
-                <a href="#">Wishlist</a>
-                <a href="shopping cart.html">Cart (0)</a>
-                <a href="login.html">Login</a>
+                <a href="wishlist.html"><li class="fa-solid fa-heart"></li></a>
+                <a href="shoppingcart.html"><li class="fa-solid fa-cart-shopping"></li></a>
+                <a href="login.html"><li class="fa-solid fa-sign-in-alt"></li></a>
             </div>
         </div>
     </header>
+    
 </body>
 </html>

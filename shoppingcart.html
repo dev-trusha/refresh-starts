@@ -4,10 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shopping Cart</title>
-    <link rel="stylesheet" href="css/shopping cart.css">
+    <link rel="stylesheet" href="css/shoppingcart.css">
+    <link rel="icon" href="assests/favicons/checkout.ico" type="image/x-icon">
+
 </head>
 <body>
     <div id="header-placeholder"></div>
+    <div id="navigation-placeholder"></div>
+
     <div class="container">
         <div class="cart">
             <div class="cart-items">
@@ -63,7 +67,7 @@
                     </div>
                 </div>
                 
-                <button class="continue-shopping">← Continue shopping</button>
+                <a class="con-shop" href="index.html"><button class="continue-shopping">← Continue shopping</button></a>
                 <div class="free-delivery">🚚 Free Delivery within 1-2 weeks</div>
             </div>
 
@@ -95,19 +99,8 @@
         </div>
     </div>
     <div id="footer-placeholder"></div>
-    <script src="scripts/shopping cart.js"></script>
-    <script> 
-        fetch('header.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('header-placeholder').innerHTML = data;
-            });
-            fetch('footer.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('footer-placeholder').innerHTML = data;
-            }); 
-  </script>
+    <script src="scripts/shoppingcart.js"></script>
+  
 
 </body>
 </html>
