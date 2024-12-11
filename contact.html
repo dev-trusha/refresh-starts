@@ -18,7 +18,7 @@
     <div class="contact-container">
         <h1>Contact Us</h1>
         <p class="contact-desc">If you have any questions, feel free to send us a message below!</p>
-        <form action="submitcontact.html" id="contact-form">
+        <form action="" id="contact-form">
                 <label for="name">Name</label>
                 <input type="text" id="name" name="name" required>
                 <label for="email">Email</label>
@@ -50,6 +50,17 @@
         .then(data => {
             document.getElementById('footer-placeholder').innerHTML = data;
         }); 
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const contactForm = document.getElementById('contact-form');
+
+        contactForm.addEventListener('submit', function (event) {
+            event.preventDefault();
+            alert('Message sent successfully! Thank you for reaching out to us!!');
+            contactForm.reset();
+        });
+    });
+
 </script>
 
 </body>

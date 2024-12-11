@@ -58,8 +58,6 @@ footer {
     margin: 20px;   
     align-self: center;
     font-family: Arial, sans-serif;
-
-
 }
 
 h1 {
@@ -81,6 +79,7 @@ h1 {
 label {
     display: block;
     margin-bottom: 5px;
+    margin-top: 10px;
     font-weight: bold;
 }
 
@@ -92,6 +91,7 @@ textarea {
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 16px;
+    margin-bottom: 5px;
 }
 
 textarea {
@@ -107,6 +107,7 @@ button[type="submit"] {
     border-radius: 5px;
     font-size: 16px;
     cursor: pointer;
+    margin-top: 10px;
 }
 
 button[type="submit"]:hover {

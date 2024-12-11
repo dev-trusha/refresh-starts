@@ -21,6 +21,55 @@ fetch('footer.html')
         document.getElementById('footer-placeholder').innerHTML = data;
     }); 
 
+$(document).ready(function () {
+        // Function to handle products with Type: phone
+        function handleProductTypes() {
+            // Loop through all product cards
+            $(".card").each(function () {
+                const card = $(this);
+                const productDesc = card.find(".product-desc").text(); // Get the product description
+                const productImage = card.find(".product-image").attr("src"); // Get the product image
+                const productName = card.find(".product-name").text(); // Get the product name
+                const productPrice = card.find(".price").text().trim(); // Get the product price
+    
+                const typeMatch = productDesc.match(/Type:\s*(\w+)/i); // Regex to extract type
+                const productType = typeMatch ? typeMatch[1].toLowerCase() : null;
+    
+                if (productType === "phone") {
+                    let phoneProducts = JSON.parse(localStorage.getItem("phoneProducts")) || [];
+                    const productExists = phoneProducts.some(item => item.name === productName);
+    
+                    if (!productExists) {
+                        phoneProducts.push({ name: productName, price: productPrice, image: productImage, desc: productDesc });
+                        localStorage.setItem("phoneProducts", JSON.stringify(phoneProducts));
+                    }    
+                }
+                else if (productType === "laptop") {
+                    let laptopProducts = JSON.parse(localStorage.getItem("laptopProducts")) || [];
+                    const productExists = laptopProducts.some(item => item.name === productName);
+    
+                    if (!productExists) {
+                        laptopProducts.push({ name: productName, price: productPrice, image: productImage, desc: productDesc });
+                        localStorage.setItem("laptopProducts", JSON.stringify(laptopProducts));
+                    }    
+                }
+                else if (productType === "tablet") {
+                    let tabletProducts = JSON.parse(localStorage.getItem("tabletProducts")) || [];
+                    const productExists = tabletProducts.some(item => item.name === productName);
+    
+                    if (!productExists) {
+                        tabletProducts.push({ name: productName, price: productPrice, image: productImage, desc: productDesc });
+                        localStorage.setItem("tabletProducts", JSON.stringify(tabletProducts));
+                    }    
+                }
+
+            });
+    }
+     // Run the function on page load
+     handleProductTypes();
+    
+});
+       
 
 $(document).ready(function () {
     $(".add-to-wishlist").on("click", function () {
@@ -30,6 +79,8 @@ $(document).ready(function () {
         console.log(productImage);
         const productName = card.find(".product-name").text(); // Get the product name
         const productPrice = card.find(".price").text().trim(); // Get the product price
+        const productDesc = card.find(".product-desc").text().trim(); // Get the product price
+
 
         const rating = card.find('.star .checked').length;
         // Change heart icon to filled
@@ -39,7 +90,7 @@ $(document).ready(function () {
         const productExists = wishlist.some(item => item.name === productName);
 
         if (!productExists) {
-            wishlist.push({ name: productName, price: productPrice, image: productImage, rating: rating });
+            wishlist.push({ name: productName, price: productPrice, image: productImage, rating: rating, desc: productDesc });
             localStorage.setItem("wishlist", JSON.stringify(wishlist));
             alert(`${productName} has been added to your wishlist!`);
         } else {
@@ -47,8 +98,9 @@ $(document).ready(function () {
         }
 
     });
-       // Rating System
-       $(".card").each(function () {
+    
+// Rating System
+$(".card").each(function () {
         const stars = $(this).find('.star i');
         stars.on("click", function () {
             const rating = $(this).data("rating");

@@ -1,3 +1,21 @@
+    // Load the header dynamically
+    fetch('header.html')
+    .then(response => response.text())
+    .then(data => {
+        document.getElementById('header-placeholder').innerHTML = data;
+    });
+fetch('navigation.html')
+    .then(response => response.text())
+    .then(data => {
+        document.getElementById('navigation-placeholder').innerHTML = data;
+    });
+fetch('footer.html')
+    .then(response => response.text())
+    .then(data => {
+        document.getElementById('footer-placeholder').innerHTML = data;
+    }); 
+
+
 $(document).ready(function () {
     const wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
     const wishlistContainer = $("#wishlist-container");
@@ -24,7 +42,7 @@ $(document).ready(function () {
                         <img src="${item.image}" alt="${item.name}" class="product-image" />
                         <div class="card-body">
                             <h3 class="text-center product-name">${item.name}</h3>
-                            <p class="text-center product-desc">Lorem ipsum dolor sit amet.</p>
+                            <p class="text-center product-desc">${item.desc || "Description not available."}</p>
                             <div class="star text-center">
                                 ${stars}  
                             </div>
