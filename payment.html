@@ -61,6 +61,7 @@
             successMessage.style.textAlign = "center";
             successMessage.style.marginTop = "20px";
             successMessage.style.fontSize = "18px";
+            successMessage.style.width = "96.5%";
             document.querySelector('.checkout-container').appendChild(successMessage);
         }
     </script>
@@ -74,12 +75,12 @@
         <h1>Checkout</h1>
         <form id="checkout-form" onsubmit="validateForm(event)">
             <fieldset>
-                <legend>Total Amounts</legend>
+                <h5 class="total-amt">Total Amount</h5>
                 <input type="text" id="total-amount" name="total-amount" value="$ 0.00" oninput="formatAmount(this)" required>
             </fieldset>
 
             <fieldset>
-                <legend><b><h2>Payment Gateway</h2></b></legend>
+                <legend><b><h2 class="pay-title">Payment Gateway</h2></b></legend>
                 <label for="card-holder">Card holder:</label>
                 <input type="text" class="input" name="card-holder" placeholder="Name" required>
 

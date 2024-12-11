@@ -31,15 +31,15 @@ $(document).ready(function () {
         const productName = card.find(".product-name").text(); // Get the product name
         const productPrice = card.find(".price").text().trim(); // Get the product price
 
+        const rating = card.find('.star .checked').length;
         // Change heart icon to filled
         $(this).removeClass("fa-regular").addClass("fa-solid");
         // Save to localStorage
         let wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
-        let cart = JSON.parse(localStorage.getItem("cart")) || [];
         const productExists = wishlist.some(item => item.name === productName);
 
         if (!productExists) {
-            wishlist.push({ name: productName, price: productPrice, image: productImage });
+            wishlist.push({ name: productName, price: productPrice, image: productImage, rating: rating });
             localStorage.setItem("wishlist", JSON.stringify(wishlist));
             alert(`${productName} has been added to your wishlist!`);
         } else {
@@ -47,7 +47,19 @@ $(document).ready(function () {
         }
 
     });
-   
+       // Rating System
+       $(".card").each(function () {
+        const stars = $(this).find('.star i');
+        stars.on("click", function () {
+            const rating = $(this).data("rating");
+
+            // Reset all stars, then highlight up to the clicked one
+            stars.removeClass('checked');
+            stars.slice(0, rating).addClass('checked');
+
+            console.log(`Rated ${rating} stars for product: ${$(this).closest(".card").find(".product-name").text()}`);
+        });
+    });
 });
 
 //Search function

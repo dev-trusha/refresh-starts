@@ -1,3 +1,9 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     background-color: #f4f4f4;
     margin: 0;
@@ -13,7 +19,9 @@ body {
     width: 100%;
 
 }
-
+.form-title{
+    text-align: center;
+}
 footer {
     background-color: #333;
     color: white;
@@ -61,9 +69,11 @@ legend {
 
 label {
     display: block;
-    margin: 10px 0 5px;
+    margin: 10px 3px 5px;
 }
-
+.same-addr-lbl{
+    margin-bottom: 20px;
+}
 input[type="text"],
 input[type="month"] {
     width: calc(100% - 20px);
@@ -73,7 +83,7 @@ input[type="month"] {
 }
 
 .checkout-button {
-    width: 100%;
+    width: 96.5%;
     padding: 10px;
     background-color: #28a745;
     color: white;

@@ -8,6 +8,16 @@ $(document).ready(function () {
         wishlist.forEach(item => {
             console.log("Rendering item from wishlist:", item.name, item.image);
 
+             // Display the product's rating on the wishlist page
+             let stars = '';
+             for (let i = 0; i < 5; i++) {
+                 if (i < item.rating) {
+                     stars += '<i class="fa-solid fa-star checked"></i>'; 
+                 } else {
+                     stars += '<i class="fa-solid fa-star"></i>'; 
+                 }
+             }
+
             wishlistContainer.append(`
                 <div class="col-md-3 py-3 py-md-0">
                     <div class="card">
@@ -16,12 +26,9 @@ $(document).ready(function () {
                             <h3 class="text-center product-name">${item.name}</h3>
                             <p class="text-center product-desc">Lorem ipsum dolor sit amet.</p>
                             <div class="star text-center">
-                                <i class="fa-solid fa-star checked"></i>
-                                <i class="fa-solid fa-star checked"></i>
-                                <i class="fa-solid fa-star checked"></i>
-                                <i class="fa-solid fa-star checked"></i>
-                                <i class="fa-solid fa-star"></i>
+                                ${stars}  
                             </div>
+
                             <h2>${item.price} 
                                 <span>
                                     <li class="fa-solid fa-heart"></li>
