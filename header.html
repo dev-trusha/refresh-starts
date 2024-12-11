@@ -25,21 +25,18 @@
                 <a href="assests/images/refresh-starts-logo.png"><img src="assests/images/refresh-starts-logo.png" alt="Refresh Starts Logo"></a>
             </div>
             <div class="search-bar">
-                <input type="text" placeholder="Search for products..." />
-                <button>
+                <input type="text" id="find" placeholder="Search for products..." onkeypress="search()" />
+                <button onclick="search()">
                     <i class="fa-solid fa-search"></i>
-                    <!-- Search -->
                 </button>
             </div>
             <div class="header-icons">
-                <!-- <a href="wishlist.html">Wishlist</a>
-                <a href="shoppingcart.html">Cart (0)</a>
-                <a href="login.html">Login</a> -->
                 <a href="wishlist.html"><li class="fa-solid fa-heart"></li></a>
                 <a href="cart.html"><li class="fa-solid fa-cart-shopping"></li></a>
                 <a href="login.html"><li class="fa-solid fa-sign-in-alt"></li></a>
             </div>
         </div>
     </header>
+    
 </body>
 </html>

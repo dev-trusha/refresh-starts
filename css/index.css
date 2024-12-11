@@ -40,12 +40,24 @@ main {
     margin-top: 5px;
     color: black;
 }
+
+.card{
+    margin: 10px;
+}
+
 .star i{
+    color: #d3d3d3;
     margin-left: 5px;
     font-size: 13px;
+    cursor: pointer;
 }
-.checked{
-    color: #ffc800;
+
+.star i.checked {
+    color: #ffcc00; 
+}
+
+.star i:hover {
+    color: #ffcc00; 
 }
 #product-cards .card h2{
     font-size: 20px;
@@ -104,3 +116,4 @@ footer {
         padding: 15px; 
     }
 }
+

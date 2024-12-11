@@ -1,3 +1,27 @@
+// Load the header,nav and footer dynamically
+setInterval(() => document.getElementById('next-btn').click(), 3000);
+fetch('header.html')
+    .then(response => response.text())
+    .then(data => {
+        document.getElementById('header-placeholder').innerHTML = data;
+    });
+    fetch('banner.html')
+    .then(response => response.text())
+    .then(data => {
+        document.getElementById('banner-placeholder').innerHTML = data;
+    });
+fetch('navigation.html')
+    .then(response => response.text())
+    .then(data => {
+        document.getElementById('navigation-placeholder').innerHTML = data;
+    });
+fetch('footer.html')
+    .then(response => response.text())
+    .then(data => {
+        document.getElementById('footer-placeholder').innerHTML = data;
+    }); 
+
+
 $(document).ready(function () {
     $(".add-to-wishlist").on("click", function () {
         // Navigate to the parent container to extract details
@@ -13,7 +37,6 @@ $(document).ready(function () {
         let wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
         let cart = JSON.parse(localStorage.getItem("cart")) || [];
         const productExists = wishlist.some(item => item.name === productName);
-        const productExistsCart = cart.some(item => item.name === productName);
 
         if (!productExists) {
             wishlist.push({ name: productName, price: productPrice, image: productImage });
@@ -23,32 +46,49 @@ $(document).ready(function () {
             alert(`${productName} is already in your wishlist!`);
         }
 
-        if (!productExistsCart) {
-            cart.push({ name: productName, price: productPrice, image: productImage });
-            localStorage.setItem("cart", JSON.stringify(cart));
-            alert(`${productName} has been added to your cart!`);
-        } else {
-            alert(`${productName} is already in your cart!`);
+    });
+   
+});
+
+//Search function
+function search() {
+    let filter = document.getElementById('find').value.toUpperCase();
+
+    let container = document.querySelector('#product-cards .row');
+    let items = Array.from(container.getElementsByClassName('col-md-3'));
+
+    items.forEach(item => {
+        let name = item.querySelector('.product-name');
+        if (name) {
+            let textValue = name.textContent || name.innerText;
+            if (textValue.toUpperCase().indexOf(filter) > -1) {
+                item.style.display = "block"; 
+            } else {
+                item.style.display = "none"; 
+            }
         }
     });
-    $(".add-to-cart").on("click", function () {
-        const card = $(this).closest(".card");
-        const productImage = card.find(".product-image").attr("src"); // Get the image source
-        console.log(productImage);
-        const productName = card.find(".product-name").text(); // Get the product name
-        const productPrice = card.find(".price").text().trim(); // Get the product price
+}
 
-        $(this).removeClass('hollow-cart fa-solid').addClass('fa-solid');
-        // Save to localStorage
-        let cart = JSON.parse(localStorage.getItem("cart")) || [];
-        const productExists = cart.some(item => item.name === productName);
 
-        if (!productExists) {
-            cart.push({ name: productName, price: productPrice, image: productImage });
-            localStorage.setItem("cart", JSON.stringify(cart));
-            alert(`${productName} has been added to your cart!`);
-        } else {
-            alert(`${productName} is already in your cart!`);
-        }
+// Get all product rating
+const productCards = document.querySelectorAll('.card');
+
+productCards.forEach(card => {
+    const stars = card.querySelectorAll('.star i');  
+
+    stars.forEach(star => {
+        star.addEventListener('click', () => {
+            stars.forEach(s => s.classList.remove('checked'));
+
+            const rating = star.getAttribute('data-rating');
+
+            for (let i = 0; i < rating; i++) {
+                stars[i].classList.add('checked');
+            }
+
+            console.log(`Rated ${rating} stars for product: ${card.querySelector('.product-name').textContent}`);
+        });
     });
 });
+
