@@ -231,3 +231,93 @@ footer {
 #footer-placeholder a:hover {
   text-decoration: underline;
 }
+/* Default styles remain as provided */
+
+@media (max-width: 1200px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cart {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .cart-items {
+    width: 100%;
+  }
+
+  .summary {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .item img {
+    width: 60px;
+  }
+
+  .quantity button {
+    padding: 5px;
+  }
+
+  .quantity input {
+    width: 25px;
+  }
+
+  .summary {
+    padding: 15px;
+  }
+
+  .price-summary p {
+    font-size: 12px;
+  }
+
+  .make-purchase {
+    font-size: 14px;
+    padding: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 14px;
+  }
+
+  .container {
+    padding: 10px;
+  }
+
+  .item img {
+    width: 50px;
+  }
+
+  .item-details a {
+    font-size: 14px;
+  }
+
+  .quantity input {
+    width: 20px;
+  }
+
+  .make-purchase {
+    font-size: 12px;
+    padding: 6px;
+  }
+
+  .payment-options img {
+    width: 50%;
+  }
+
+  footer {
+    font-size: 12px;
+    padding: 15px;
+  }
+}
